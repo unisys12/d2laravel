@@ -1,0 +1,38 @@
+{
+    "name": "unisys12/d2laravel",
+    "description": "Aims to give a good starting point for working with the Bungie Destiny 2 API within a Laravel Project.",
+    "type": "library",
+    "require": {
+        "doctrine/dbal": "^3.0"
+    },
+    "require-dev": {
+        "orchestra/testbench": "^6.4",
+        "phpunit/phpunit": "^9.4",
+        "phpunit/php-code-coverage": "^9.2",
+        "guzzlehttp/guzzle": "^7.2"
+    },
+    "autoload": {
+        "psr-4": {
+            "unisys12\\D2Laravel\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "unisys12\\D2Laravel\\Tests\\": "tests/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "unisys12\\D2Laravel\\D2LaravelServiceProvider"
+            ]
+        }
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Phillip Jackson",
+            "email": "unisys12@gmail.com"
+        }
+    ]
+}
