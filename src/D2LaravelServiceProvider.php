@@ -4,6 +4,7 @@ namespace unisys12\D2Laravel;
 
 use Illuminate\Support\ServiceProvider;
 use unisys12\D2Laravel\Console\checkManifestVersion;
+use unisys12\D2Laravel\Console\DownloadManifest;
 use unisys12\D2Laravel\Console\SeedTable;
 
 class D2LaravelServiceProvider extends ServiceProvider
@@ -19,6 +20,7 @@ class D2LaravelServiceProvider extends ServiceProvider
             $this->commands([
                 checkManifestVersion::class,
                 SeedTable::class,
+                DownloadManifest::class,
             ]);
 
             if (!class_exists('CreateManifestTable')) {
