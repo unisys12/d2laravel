@@ -1,6 +1,6 @@
 <?php
 
-namespace Database\Factories;
+namespace unisys12\D2Laravel\Database\Factories;
 
 use unisys12\D2Laravel\Models\Manifest;
 use Illuminate\Database\Eloquent\Factories\Factory;
@@ -21,6 +21,8 @@ class ManifestFactory extends Factory
      */
     public function definition()
     {
-        //
+        return [
+            //
+        ];
     }
 }

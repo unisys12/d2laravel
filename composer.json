@@ -13,7 +13,8 @@
     },
     "autoload": {
         "psr-4": {
-            "unisys12\\D2Laravel\\": "src/"
+            "unisys12\\D2Laravel\\": "src/",
+            "unisys12\\D2Laravel\\Database\\Factories\\": "database/factories/"
         }
     },
     "autoload-dev": {

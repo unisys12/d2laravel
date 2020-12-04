@@ -11,11 +11,15 @@ use unisys12\D2Laravel\D2LaravelServiceProvider;
 
 class TestCase extends \Orchestra\Testbench\TestCase
 {
+
     public function setUp(): void
     {
         // setup tests
         parent::setUp();
-        Artisan::call('migrate:fresh');
+
+        include_once __DIR__ . "/../src/database/migrations/create_manifests_table.php.stub";
+
+        (new \CreateManifestsTable)->up();
     }
 
     protected function getPackageProviders($app)
@@ -27,10 +31,12 @@ class TestCase extends \Orchestra\Testbench\TestCase
 
     protected function getEnvironmentSetUp($app)
     {
-        // import the CreatePostsTable class from the migration
-        include_once __DIR__ . '/../src/database/migrations/create_manifest_table.php.stub';
-
-        // run the up() method of that migration class
-        (new \CreateManifestTable)->up();
+        // Setup default database to use sqlite :memory:
+        $app['config']->set('database.default', 'testbench');
+        $app['config']->set('database.connections.testbench', [
+            'driver'   => 'sqlite',
+            'database' => ':memory:',
+            'prefix'   => '',
+        ]);
     }
 }

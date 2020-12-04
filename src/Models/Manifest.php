@@ -2,8 +2,9 @@
 
 namespace unisys12\D2Laravel\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
+use unisys12\D2Laravel\Database\Factories\ManifestFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Manifest extends Model
 {
@@ -13,6 +14,6 @@ class Manifest extends Model
 
     protected static function newFactory()
     {
-        return \unisys12\D2Laravel\Database\Factories\ManifestFactory::new();
+        return ManifestFactory::new();
     }
 }
