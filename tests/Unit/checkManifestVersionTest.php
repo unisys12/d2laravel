@@ -15,7 +15,7 @@ class checkManifestVersionTest extends TestCase
         // Currently, must run cmd `d2:check` to get the version number and paste it here
         // NOT GOOD
         $this->artisan('d2:check')
-            ->expectsOutput('Current Manifest version is 89360.20.11.18.2249-6')
+            ->expectsOutput('Current Manifest version is 89403.20.11.19.1944-5')
             ->assertExitCode(0);
     }
 }
