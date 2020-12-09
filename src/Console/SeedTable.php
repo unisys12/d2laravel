@@ -16,9 +16,9 @@ use unisys12\D2Laravel\Helpers\Seeders\ManifestSeeder;
  */
 class SeedTable extends Command
 {
-    protected $signature = 'd2:seed {--tables=*} {--lang=en}';
+    protected $signature = 'd2:seed {tables*} {--lang=en}';
 
-    protected $description = 'Seed the local database with paths from the current Destiny 2 Manifest';
+    protected $description = 'Seed the local database from paths from the current Destiny 2 Manifest';
 
     public function __construct()
     {
@@ -28,11 +28,12 @@ class SeedTable extends Command
     public function handle()
     {
         // handle seeding method calls
-        foreach ($this->option('tables') as $table) {
+        foreach ($this->argument('tables') as $table) {
             switch ($table) {
                 case 'manifest':
                     $this->info('### Fetching Manifest ###');
                     $manifest = new ManifestSeeder($table, $this->option('lang'));
+                    $this->info("### Seeding Manifest Table with paths ###");
                     $manifest->seeder();
                     break;
 
