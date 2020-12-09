@@ -20,7 +20,7 @@ use Illuminate\Support\Facades\DB;
  */
 class ManifestSeeder
 {
-    function __construct($tables, $lang)
+    function __construct($tables, $lang = "en")
     {
         $this->tables = $tables;
         $this->lang = $lang;
